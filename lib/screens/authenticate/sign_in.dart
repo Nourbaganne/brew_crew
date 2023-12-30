@@ -2,7 +2,7 @@ import 'package:brew_crew/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+  const SignIn({Key? key}) : super(key: key);
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -30,7 +30,7 @@ class _SignInState extends State<SignIn> {
               print('Error signing in');
             } else {
               print('signed in');
-              print(result);
+              print(result.uid);
             }
           },
         ),

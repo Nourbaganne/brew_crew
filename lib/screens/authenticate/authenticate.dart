@@ -2,7 +2,7 @@ import 'package:brew_crew/screens/authenticate/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class Authenticate extends StatefulWidget {
-  const Authenticate({super.key});
+  const Authenticate({Key? key}) : super(key: key);
 
   @override
   State<Authenticate> createState() => _AuthenticateState();
