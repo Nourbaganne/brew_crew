@@ -3,16 +3,16 @@ import 'package:brew_crew/shared/constants.dart';
 import 'package:brew_crew/shared/loading.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({Key? key, required this.toggleView}) : super(key: key);
+class Register extends StatefulWidget {
+  const Register({super.key, required this.toggleView});
 
   final Function toggleView;
 
   @override
-  State<SignIn> createState() => _SignInState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
   bool loading = false;
@@ -31,7 +31,7 @@ class _SignInState extends State<SignIn> {
             appBar: AppBar(
               backgroundColor: Colors.brown[400],
               elevation: 0.0,
-              title: const Text('Sign In To Brew Crew'),
+              title: const Text('Sign Up To Brew Crew'),
               actions: <Widget>[
                 TextButton.icon(
                     onPressed: () {
@@ -42,7 +42,7 @@ class _SignInState extends State<SignIn> {
                       color: Colors.black,
                     ),
                     label: const Text(
-                      'Register',
+                      'Sign In',
                       style: TextStyle(color: Colors.black),
                     )),
               ],
@@ -91,7 +91,7 @@ class _SignInState extends State<SignIn> {
                               loading = true;
                             });
                             dynamic result = await _auth
-                                .signInWithEmailAndPassword(email, password);
+                                .registerWithEmailAndPassword(email, password);
                             if (result == null) {
                               setState(() {
                                 error =
@@ -101,7 +101,7 @@ class _SignInState extends State<SignIn> {
                             }
                           }
                         },
-                        child: const Text("Sign In"),
+                        child: const Text("Register"),
                       ),
                       const SizedBox(
                         height: 12,
