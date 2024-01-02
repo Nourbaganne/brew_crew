@@ -50,7 +50,7 @@ class AuthService {
       User user = credential.user!;
 
       // create a new document for the user with the uid
-      await DatabaseService(uid: user.uid).updateUserData('0', 'Nour', 100);
+      await DatabaseService(uid: user.uid).updateUserData('0', 'Name', 100);
 
       return _userFromUserCredential(user);
     } catch (e) {
